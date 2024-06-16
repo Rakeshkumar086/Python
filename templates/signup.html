@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: url('path_to_your_background_image.jpg') no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 400px;
+        margin: 50px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+    <h2><u>Sign Up as Candidate</u></h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ candidate_form.as_p }}
+        <button type="submit" name="candidate"><a href="http://localhost:8000/login/"> Sign up </a></button>
+        Already an accounct <a href="http://localhost:8000/login/"> Login </a>
+    </form>
+    <h2> <u>Sign Up as Recruiter</u></h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ recruiter_form.as_p }}
+        <button type="submit" name="recruiter"><a href="http://localhost:8000/login/">Sign up </a></button>
+        Already an accounct <a href="http://localhost:8000/login/"> Login </a>
+    </form>
+</body>
+</html>
